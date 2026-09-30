@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/main.js" defer></script>
 </head>
-<body>
+<body id="top">
 <header>
     <div class="site-header">
         <a class="site-logo" href="index.html">
@@ -20,6 +20,8 @@
                 <li><a href="index.html">Главная</a></li>
                 <li><a href="catalog.html">Каталог</a></li>
                 <li><a href="comparison.html">Сравнение</a></li>
+                <li><a href="reviews.html">Отзывы</a></li>
+                <li><a href="faq.html">FAQ</a></li>
                 <li><a href="contacts.html">Контакты</a></li>
                 <li><a href="index.html#advantages">Преимущества</a></li>
                 <li><a href="index.html#popular">Популярные товары</a></li>
@@ -38,8 +40,7 @@
         <h1>Каталог товаров</h1>
         <p>
             На этой странице представлен учебный каталог товаров.
-            В дальнейшем здесь будут добавлены фильтры, сортировка и более
-            подробные карточки.
+            Здесь есть фильтры, карточки товаров и переходы к подробным страницам товаров.
         </p>
     </section>
     <section class="catalog-layout">
@@ -64,6 +65,7 @@
                         <input type="checkbox" name="category" value="new">
                         Новинки
                     </label>
+
                 </fieldset>
 
                 <fieldset>
@@ -83,26 +85,28 @@
         <section class="catalog-products">
             <h2>Список товаров</h2>
             <div class="products-grid">
-                <article class="product-card">
+                <article class="product-card product-card--featured">
                     <span class="product-card__badge">Хит</span>
                     <img class="product-card__image" src="images/product-1.svg" alt="Ручка">
                     <h3 class="product-card__title">Ручка</h3>
                     <p class="product-card__description">Шариковая ручка для учебы и заметок.</p>
                     <p class="product-card__price">Цена: 100 руб.</p>
                     <div class="product-card__actions">
+                        <a class="button" href="product-pen.html">Подробнее</a>
                         <button class="button product-card__button" type="button" data-product="Ручка">
                             Заказать
                         </button>
                     </div>
                 </article>
 
-                <article class="product-card">
+                <article class="product-card product-card--compact">
                     <img class="product-card__image" src="images/product-2.svg" alt="Карандаш">
                     <h3 class="product-card__title">Карандаш</h3>
                     <p class="product-card__description">Простой карандаш с ластиком для чертежей.</p>
                     <p class="product-card__price">Цена: 80 руб.</p>
                     <div class="product-card__actions">
-                        <button class="button product-card__button" type="button" data-product="Ручка">
+                        <a class="button" href="product-pencil.html">Подробнее</a>
+                        <button class="button product-card__button" type="button" data-product="Карандаш">
                             Заказать
                         </button>
                     </div>
@@ -114,7 +118,8 @@
                     <p class="product-card__description">Линейка для измерений и аккуратной разметки.</p>
                     <p class="product-card__price">Цена: 120 руб.</p>
                     <div class="product-card__actions">
-                        <button class="button product-card__button" type="button" data-product="Ручка">
+                        <a class="button" href="product-ruler.html">Подробнее</a>
+                        <button class="button product-card__button" type="button" data-product="Линейка">
                             Заказать
                         </button>
                     </div>
@@ -122,12 +127,13 @@
 
                 <article class="product-card">
                     <span class="product-card__badge">Хит</span>
-                    <img class="product-card__image" src="images/ella.jpg" alt="Ручка">
+                    <img class="product-card__image" src="images/ella.jpg" alt="Моя спящая Элла">
                     <h3 class="product-card__title">Моя спящая Элла</h3>
                     <p class="product-card__description">Элла спит.</p>
                     <p class="product-card__price">Цена: бесценно</p>
                     <div class="product-card__actions">
-                        <button class="button product-card__button" type="button" data-product="Ручка">
+                        <a class="button" href="product-ella.html">Подробнее</a>
+                        <button class="button product-card__button" type="button" data-product="Моя спящая Элла">
                             Заказать
                         </button>
                     </div>
@@ -138,8 +144,11 @@
 
 
 </main>
-<dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+<dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title" aria-describedby="order-dialog-description">
     <h2 id="order-dialog-title">Оформление заявки</h2>
+    <p class="order-dialog__text" id="order-dialog-description">
+        Заполните контактные данные, и мы свяжемся с вами по выбранному товару.
+    </p>
 
     <form class="order-form" id="order-form" action="#" method="post" novalidate>
         <input id="selected-product" name="selected-product" type="hidden">
@@ -225,7 +234,7 @@
         </div>
 
         <div class="form-actions">
-            <button class="button" type="button" id="close-order-dialog">Закрыть</button>
+            <button class="button button--secondary" type="button" id="close-order-dialog">Закрыть</button>
             <button class="button" type="submit">Отправить заявку</button>
         </div>
     </form>

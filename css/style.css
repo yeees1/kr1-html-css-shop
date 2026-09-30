@@ -95,7 +95,12 @@ a:focus-visible {
 }
 
 .button:hover {
+    color: var(--color-white);
     background-color: var(--color-primary-dark);
+}
+
+.button:active {
+    transform: translateY(1px);
 }
 
 .button:focus-visible {
@@ -106,6 +111,17 @@ a:focus-visible {
 .button:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+}
+
+.button--secondary {
+    color: var(--color-primary);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-primary);
+}
+
+.button--secondary:hover {
+    color: var(--color-white);
+    background-color: var(--color-primary);
 }
 /* ===============================
    4. Компоненты страницы
@@ -148,10 +164,11 @@ a:focus-visible {
     border-radius: var(--radius-sm);
 }
 
-.section img {
+.section__image {
     display: block;
     width: 50%;
     aspect-ratio: 4 / 3;
+    object-fit: cover;
     border-radius: var(--radius-sm);
     background-color: var(--color-surface);
 }
@@ -204,7 +221,10 @@ a:focus-visible {
 }
 
 .product-card__actions {
-    margin-top: auto;
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
 }
 
 .product-card .button {
@@ -215,6 +235,91 @@ a:focus-visible {
 .product-card:hover {
     border-color: var(--color-primary);
     box-shadow: 0 8px 18px rgba(22, 138, 47, 0.12);
+}
+
+.product-card:focus-within {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(22, 138, 47, 0.18);
+}
+
+.product-card--featured {
+    background-color: var(--color-surface-accent);
+}
+
+.product-card--compact .product-card__description {
+    color: var(--color-muted);
+}
+
+.review-card {
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-white);
+}
+
+.review-card h2,
+.review-card h3 {
+    margin-top: 0;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+}
+
+.faq-list {
+    display: grid;
+    gap: var(--space-md);
+}
+
+.faq-item {
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-white);
+}
+
+.faq-item h2,
+.faq-item h3 {
+    margin-top: 0;
+    margin-bottom: var(--space-sm);
+}
+
+.faq-item p {
+    margin: 0;
+}
+
+.product-detail {
+    max-width: var(--container-width);
+    margin: 0 auto var(--space-xl);
+    display: grid;
+    grid-template-columns: minmax(280px, 420px) 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+}
+
+.product-detail__image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    background-color: var(--color-surface);
+}
+
+.product-detail__label {
+    margin: 0 0 var(--space-sm);
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.product-detail__price {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.product-detail__list {
+    margin-bottom: var(--space-lg);
 }
 
 .aside-info {
@@ -262,6 +367,9 @@ a:focus-visible {
 
 .catalog-filters {
     grid-area: filters;
+    position: sticky;
+    top: var(--space-lg);
+    align-self: start;
     padding: var(--space-md);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
@@ -344,6 +452,24 @@ a:focus-visible {
     margin-top: var(--space-xs);
     color: var(--color-muted);
 }
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.order-dialog__text {
+    color: var(--color-muted);
+}
+
+.order-dialog__product {
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-surface);
+    font-weight: 700;
+}
+
 .form-field input:hover,
 .form-field select:hover,
 .form-field textarea:hover {
@@ -418,4 +544,27 @@ html {
     font-weight: 700;
     color: var(--color-white);
     background-color: var(--color-primary);
+}
+
+@media (max-width: 900px) {
+    .products-grid,
+    .reviews-grid,
+    .product-detail,
+    .catalog-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .catalog-layout {
+        grid-template-areas:
+            "filters"
+            "products";
+    }
+
+    .catalog-filters {
+        position: static;
+    }
+
+    .section__image {
+        width: 100%;
+    }
 }

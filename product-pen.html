@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Подробная карточка товара Ручка в учебном интернет-магазине.">
+    <title>Ручка — подробная карточка товара</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body id="top">
+<header>
+    <div class="site-header">
+        <a class="site-logo" href="index.html">
+            <img src="images/logo.jpg" alt="ShopProject">
+        </a>
+
+        <nav class="site-nav" aria-label="Основная навигация">
+            <ul class="site-nav__list">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="comparison.html">Сравнение</a></li>
+                <li><a href="reviews.html">Отзывы</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+                <li><a href="index.html#advantages">Преимущества</a></li>
+                <li><a href="index.html#popular">Популярные товары</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <span>Ручка</span>
+    </nav>
+
+    <section class="product-detail">
+        <img class="product-detail__image" src="images/product-1.svg" alt="Ручка">
+        <div class="product-detail__content">
+            <p class="product-detail__label">Подробная карточка товара</p>
+            <h1>Ручка</h1>
+            <p>
+                Шариковая ручка для учебы, конспектов и ежедневных заметок.
+                Подходит для тетрадей, блокнотов и рабочих записей.
+            </p>
+            <p class="product-detail__price">100 руб.</p>
+            <div class="comparison-table-wrap">
+                <table class="comparison-table product-detail__table">
+                    <tbody>
+                    <tr>
+                        <th>Характеристика</th>
+                        <th>Значение</th>
+                    </tr>
+                    <tr>
+                        <td>Тип товара</td>
+                        <td>Шариковая ручка</td>
+                    </tr>
+                    <tr>
+                        <td>Назначение</td>
+                        <td>Письмо, конспекты, заметки</td>
+                    </tr>
+                    <tr>
+                        <td>Цвет корпуса</td>
+                        <td>Синий</td>
+                    </tr>
+                    <tr>
+                        <td>Статус</td>
+                        <td>Популярный товар</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="product-card__actions">
+                <button class="button product-card__button" type="button" data-product="Ручка">Заказать</button>
+                <a class="button button--secondary" href="catalog.html">Вернуться в каталог</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title" aria-describedby="order-dialog-description">
+    <h2 id="order-dialog-title">Оформление заявки</h2>
+    <p class="order-dialog__text" id="order-dialog-description">
+        Заполните контактные данные, и мы свяжемся с вами по выбранному товару.
+    </p>
+
+    <form class="order-form" id="order-form" action="#" method="post" novalidate>
+        <input id="selected-product" name="selected-product" type="hidden">
+
+        <div class="form-field">
+            <label for="order-name">Имя</label>
+            <input id="order-name" name="name" type="text" placeholder="Введите ваше имя" minlength="2" autocomplete="given-name" required>
+        </div>
+
+        <div class="form-field">
+            <label for="order-email">E-mail</label>
+            <input id="order-email" name="email" type="email" placeholder="example@mail.ru" autocomplete="email" required>
+        </div>
+
+        <div class="form-field">
+            <label for="order-phone">Телефон</label>
+            <input id="order-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
+            <small>Формат: +7 (900) 000-00-00</small>
+        </div>
+
+        <div class="form-field">
+            <label for="order-date">Дата связи</label>
+            <input id="order-date" name="date" type="date">
+        </div>
+
+        <div class="form-field">
+            <label for="order-topic">Тема заявки</label>
+            <select id="order-topic" name="topic" required>
+                <option value="">Выберите тему</option>
+                <option value="product">Заказ товара</option>
+                <option value="consultation">Консультация</option>
+                <option value="delivery">Доставка</option>
+            </select>
+        </div>
+
+        <div class="form-field">
+            <label for="order-comment">Комментарий</label>
+            <textarea id="order-comment" name="comment" rows="4" placeholder="Укажите дополнительную информацию"></textarea>
+        </div>
+
+        <div class="form-field form-field--checkbox">
+            <label>
+                <input id="order-agreement" name="agreement" type="checkbox" required>
+                Я согласен на обработку данных
+            </label>
+        </div>
+
+        <div class="form-actions">
+            <button class="button button--secondary" type="button" id="close-order-dialog">Закрыть</button>
+            <button class="button" type="submit">Отправить заявку</button>
+        </div>
+    </form>
+</dialog>
+
+<p class="success-message" id="success-message" hidden>
+    Форма успешно отправлена!
+</p>
+<footer>
+    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+</footer>
+</body>
+</html>
