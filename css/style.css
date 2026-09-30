@@ -92,6 +92,8 @@ a:focus-visible {
     border: none;
     border-radius: var(--radius-sm);
     cursor: pointer;
+    font: inherit;
+    line-height: 1.5;
 }
 
 .button:hover {
