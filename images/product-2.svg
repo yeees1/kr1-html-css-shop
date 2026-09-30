@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" role="img" aria-labelledby="title desc">
+  <title id="title">Карандаш</title>
+  <desc id="desc">Желтый карандаш с ластиком на светлом фоне</desc>
+  <rect width="360" height="220" fill="#fff7e6"/>
+  <g transform="rotate(-28 180 110)">
+    <rect x="82" y="94" width="180" height="32" fill="#f2c94c"/>
+    <path d="M262 94l48 16-48 16z" fill="#d8a15f"/>
+    <path d="M296 105l22 5-22 5z" fill="#222222"/>
+    <rect x="58" y="94" width="28" height="32" rx="5" fill="#f28ca0"/>
+    <rect x="86" y="94" width="12" height="32" fill="#c5cbd3"/>
+    <path d="M112 94v32M136 94v32M160 94v32M184 94v32M208 94v32M232 94v32" stroke="#d29a20" stroke-width="3"/>
+  </g>
+  <text x="180" y="186" text-anchor="middle" fill="#222222" font-family="Arial, sans-serif" font-size="22" font-weight="700">Карандаш</text>
+</svg>

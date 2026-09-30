@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" role="img" aria-labelledby="title desc">
+  <title id="title">Линейка</title>
+  <desc id="desc">Прозрачная линейка с делениями на светлом фоне</desc>
+  <rect width="360" height="220" fill="#eef5ff"/>
+  <g transform="rotate(-12 180 110)">
+    <rect x="52" y="82" width="256" height="56" rx="10" fill="#dcecff" stroke="#1f5f9f" stroke-width="4"/>
+    <path d="M80 84v24M104 84v14M128 84v24M152 84v14M176 84v24M200 84v14M224 84v24M248 84v14M272 84v24" stroke="#1f5f9f" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="82" cy="120" r="8" fill="#ffffff" stroke="#1f5f9f" stroke-width="3"/>
+    <text x="121" y="124" fill="#1f5f9f" font-family="Arial, sans-serif" font-size="16" font-weight="700">10</text>
+    <text x="169" y="124" fill="#1f5f9f" font-family="Arial, sans-serif" font-size="16" font-weight="700">20</text>
+    <text x="217" y="124" fill="#1f5f9f" font-family="Arial, sans-serif" font-size="16" font-weight="700">30</text>
+  </g>
+  <text x="180" y="186" text-anchor="middle" fill="#222222" font-family="Arial, sans-serif" font-size="22" font-weight="700">Линейка</text>
+</svg>

@@ -4,17 +4,17 @@
 
 :root {
     /* Основные цвета проекта */
-    --color-bg: #ffffff;
-    --color-text: #222222;
-    --color-muted: #666666;
-    --color-primary: #0057b8;
-    --color-primary-dark: #003f86;
-    --color-border: #dddddd;
-    --color-surface: #f7f7f7;
-    --color-surface-accent: #eef5ff;
+    --color-bg: #fbfefb;
+    --color-text: #17351f;
+    --color-muted: #5f7567;
+    --color-primary: #168a2f;
+    --color-primary-dark: #0f6423;
+    --color-border: #b7d8bf;
+    --color-surface: #eef8f0;
+    --color-surface-accent: #ddf4e3;
     --color-danger: #b00020;
     --color-success: #168a2f;
-    --color-success-bg: #eefaf0;
+    --color-success-bg: #e6f7ea;
     --color-white: #ffffff;
 
     /* Отступы */
@@ -46,17 +46,25 @@ body {
     line-height: 1.5;
     color: var(--color-text);
     background-color: var(--color-bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 header,
 main,
 footer {
     padding: var(--space-lg);
 }
+main {
+    flex-grow: 1;
+}
 header {
+    border-bottom: 1px solid var(--color-border);
     background-color: var(--color-surface);
 }
 
 footer {
+    border-top: 1px solid var(--color-border);
     background-color: var(--color-surface);
 }
 /* ===============================
@@ -119,7 +127,38 @@ a:focus-visible {
 .section h2 {
     margin-top: 0;
 }
+
+.site-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+}
+
+.site-logo {
+    display: inline-flex;
+    align-items: center;
+}
+
+.site-logo img {
+    display: block;
+    width: 120px;
+    height: auto;
+    border-radius: var(--radius-sm);
+}
+
+.section img {
+    display: block;
+    width: 50%;
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius-sm);
+    background-color: var(--color-surface);
+}
+
+
 .product-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: var(--space-sm);
@@ -130,19 +169,54 @@ a:focus-visible {
     background-color: var(--color-bg);
 }
 
-.product-card .button {
+.product-card__badge {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    padding: 4px 8px;
+    color: var(--color-white);
+    background-color: var(--color-success);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.product-card__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    background-color: var(--color-surface);
+}
+
+.product-card__title {
+    margin: 0;
+}
+
+.product-card__description,
+.product-card__price {
+    margin: 0;
+}
+
+.product-card__price {
+    font-weight: 700;
+}
+
+.product-card__actions {
     margin-top: auto;
+}
+
+.product-card .button {
     align-self: flex-start;
 }
 
 
 .product-card:hover {
     border-color: var(--color-primary);
+    box-shadow: 0 8px 18px rgba(22, 138, 47, 0.12);
 }
 
-.product-card h3 {
-    margin-top: 0;
-}
 .aside-info {
     max-width: var(--container-width);
     margin: 0 auto var(--space-xl);
@@ -318,3 +392,30 @@ html {
     outline-offset: 4px;
 }
 
+.comparison-table-wrap {
+    overflow-x: auto;
+}
+
+.comparison-table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--color-border);
+    text-align: center;
+}
+
+.comparison-table th:first-child,
+.comparison-table td:first-child {
+    text-align: left;
+}
+
+.comparison-table th {
+    font-weight: 700;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+}
